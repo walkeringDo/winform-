@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Zxw.Framework.NetCore\Zxw.Framework.NetCore.csproj" />
+    <ProjectReference Include="..\Zxw.Framework.Pay\Zxw.Framework.Pay.csproj" />
+    <ProjectReference Include="..\Zxw.Framework.Website.IRepositories\Zxw.Framework.Website.IRepositories.csproj" />
+    <ProjectReference Include="..\Zxw.Framework.Website.ViewModels\Zxw.Framework.Website.ViewModels.csproj" />
+  </ItemGroup>
+</Project>

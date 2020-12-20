@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="MyFirstEF1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="MyFirstEF1Container" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="testEF集" EntityType="MyFirstEF1.testEF" />
+  </EntityContainer>
+  <EntityType Name="testEF">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="StudentName" Nullable="false" />
+    <Property Type="Int32" Name="Age" Nullable="false" />
+    <Property Type="Int32" Name="Class" Nullable="false" />
+    <Property Type="DateTime" Name="NowTime" Nullable="false" />
+  </EntityType>
+</Schema>

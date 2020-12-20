@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8732/Service/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8732/Service/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8732/Service/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Host" />
+      <xsd:import schemaLocation="http://localhost:8732/Service/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.IO" />
+      <xsd:import schemaLocation="http://localhost:8732/Service/?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_UploadFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadFile" />
+  </wsdl:message>
+  <wsdl:message name="IService_UploadFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DownloadFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadFile" />
+  </wsdl:message>
+  <wsdl:message name="IService_DownloadFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_setMsg_InputMessage">
+    <wsdl:part name="parameters" element="tns:setMsg" />
+  </wsdl:message>
+  <wsdl:message name="IService_setMsg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setMsgResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DoSql_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoSql" />
+  </wsdl:message>
+  <wsdl:message name="IService_DoSql_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoSqlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_LoginSystem_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginSystem" />
+  </wsdl:message>
+  <wsdl:message name="IService_LoginSystem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginSystemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_LoadAPK_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadAPK" />
+  </wsdl:message>
+  <wsdl:message name="IService_LoadAPK_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadAPKResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateAPK_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAPK" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateAPK_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAPKResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RunProcedure_InputMessage">
+    <wsdl:part name="parameters" element="tns:RunProcedure" />
+  </wsdl:message>
+  <wsdl:message name="IService_RunProcedure_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RunProcedureResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="UploadFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UploadFile" message="tns:IService_UploadFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UploadFileResponse" message="tns:IService_UploadFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DownloadFile" message="tns:IService_DownloadFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DownloadFileResponse" message="tns:IService_DownloadFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setMsg">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/setMsg" message="tns:IService_setMsg_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/setMsgResponse" message="tns:IService_setMsg_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoSql">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DoSql" message="tns:IService_DoSql_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DoSqlResponse" message="tns:IService_DoSql_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginSystem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/LoginSystem" message="tns:IService_LoginSystem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/LoginSystemResponse" message="tns:IService_LoginSystem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadAPK">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/LoadAPK" message="tns:IService_LoadAPK_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/LoadAPKResponse" message="tns:IService_LoadAPK_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAPK">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateAPK" message="tns:IService_UpdateAPK_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateAPKResponse" message="tns:IService_UpdateAPK_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RunProcedure">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RunProcedure" message="tns:IService_RunProcedure_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RunProcedureResponse" message="tns:IService_RunProcedure_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="Service" />
+</wsdl:definitions>

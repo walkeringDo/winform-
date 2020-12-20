@@ -1,0 +1,36 @@
+<publishData>
+  <publishTarget publishUrl="F:\WeatherServices\">
+    <file relUrl="WeatherServices.StationWeatherServer.svc" publishTime="09/18/2012 14:54:55" />
+    <file relUrl="Modles\Entities/Weather.cs" publishTime="09/05/2012 17:32:40" />
+    <file relUrl="Properties/AssemblyInfo.cs" publishTime="09/05/2012 17:29:21" />
+    <file relUrl="WeatherServices.csproj" publishTime="09/18/2012 14:51:15" />
+    <file relUrl="Modles\Interfaces/ICityInfo.cs" publishTime="09/05/2012 17:32:58" />
+    <file relUrl="WeatherService.cs" publishTime="09/18/2012 14:53:30" />
+    <file relUrl="bin\Debug/WeatherServices.pdb" publishTime="09/18/2012 14:54:54" />
+    <file relUrl="WeatherServices.Publish.xml" publishTime="09/18/2012 14:53:58" />
+    <file relUrl="bin\Debug/WeatherServices.dll" publishTime="09/18/2012 14:54:54" />
+    <file relUrl="Modles\Entities/UserInfo.cs" publishTime="09/06/2012 13:34:03" />
+    <file relUrl="WeatherServices/WeatherServices.StationWeatherServer.svc" publishTime="09/05/2012 18:53:59" />
+    <file relUrl="Modles\Interfaces/ILogin.cs" publishTime="09/05/2012 17:32:58" />
+    <file relUrl="bin/WeatherServices.dll" publishTime="09/18/2012 14:54:54" />
+    <file relUrl="bin\Debug/WeatherServices.dll.config" publishTime="09/07/2012 09:28:19" />
+    <file relUrl="Modles\Entities/Login.cs" publishTime="09/07/2012 13:18:18" />
+    <file relUrl="WeatherServices.csproj.user" publishTime="09/18/2012 14:54:46" />
+    <file relUrl="Modles\Interfaces/IWeather.cs" publishTime="09/05/2012 17:32:58" />
+    <file relUrl="Modles\Entities/Item.cs" publishTime="09/05/2012 17:32:40" />
+    <file relUrl="WeatherServices\bin/WeatherServices.pdb" publishTime="09/05/2012 18:53:59" />
+    <file relUrl="bin/WeatherServices.dll.config" publishTime="09/07/2012 09:28:19" />
+    <file relUrl="bin/WeatherServices.pdb" publishTime="09/18/2012 14:54:54" />
+    <file relUrl="Modles\Entities/CityInfo.cs" publishTime="09/05/2012 17:32:40" />
+    <file relUrl="Modles\Interfaces/ICallback.cs" publishTime="09/06/2012 14:29:51" />
+    <file relUrl="WeatherServices\bin/WeatherServices.dll" publishTime="09/05/2012 18:53:59" />
+    <file relUrl="App.config" publishTime="09/07/2012 09:28:19" />
+    <file relUrl="Web.config" publishTime="09/07/2012 09:28:19" />
+    <file relUrl="Modles\Interfaces/IItem.cs" publishTime="09/05/2012 17:32:58" />
+    <file relUrl="WeatherServices/Web.config" publishTime="09/05/2012 17:33:07" />
+    <file relUrl="Modles\Interfaces/IUserInfo.cs" publishTime="09/06/2012 13:34:03" />
+    <file relUrl="IWeatherService.cs" publishTime="09/18/2012 14:51:15" />
+    <file relUrl="WeatherServices\bin/WeatherServices.dll.config" publishTime="09/05/2012 17:33:07" />
+    <file relUrl="WeatherServices/WeatherServices.ClientWeatherServer.svc" publishTime="09/05/2012 18:53:59" />
+  </publishTarget>
+</publishData>

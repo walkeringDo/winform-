@@ -1,0 +1,15 @@
+F:\BaiduNetdiskDownload\WCF\CS\Server\FileUploadService\obj\Debug\FileService.csprojResolveAssemblyReference.cache
+F:\BaiduNetdiskDownload\WCF\CS\Server\FileUploadService\bin\Debug\FileService.dll
+F:\BaiduNetdiskDownload\WCF\CS\Server\FileUploadService\bin\Debug\FileService.pdb
+F:\BaiduNetdiskDownload\WCF\CS\Server\FileUploadService\obj\Debug\FileService.dll
+F:\BaiduNetdiskDownload\WCF\CS\Server\FileUploadService\obj\Debug\FileService.pdb
+F:\BaiduNetdiskDownload\c#自用相关\TestDLL\WCF数据传输\Server\FileUploadService\bin\Debug\FileService.dll
+F:\BaiduNetdiskDownload\c#自用相关\TestDLL\WCF数据传输\Server\FileUploadService\bin\Debug\FileService.pdb
+F:\BaiduNetdiskDownload\c#自用相关\TestDLL\WCF数据传输\Server\FileUploadService\obj\Debug\FileService.dll
+F:\BaiduNetdiskDownload\c#自用相关\TestDLL\WCF数据传输\Server\FileUploadService\obj\Debug\FileService.pdb
+E:\c#自用相关\TestDLL\WCF数据传输\Server\FileUploadService\bin\Debug\FileService.dll
+E:\c#自用相关\TestDLL\WCF数据传输\Server\FileUploadService\bin\Debug\FileService.pdb
+E:\c#自用相关\TestDLL\WCF数据传输\Server\FileUploadService\obj\Debug\FileService.csprojAssemblyReference.cache
+E:\c#自用相关\TestDLL\WCF数据传输\Server\FileUploadService\obj\Debug\FileService.csproj.CoreCompileInputs.cache
+E:\c#自用相关\TestDLL\WCF数据传输\Server\FileUploadService\obj\Debug\FileService.dll
+E:\c#自用相关\TestDLL\WCF数据传输\Server\FileUploadService\obj\Debug\FileService.pdb

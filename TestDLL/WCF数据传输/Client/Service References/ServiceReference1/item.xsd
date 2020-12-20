@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Host" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Host" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8732/Service/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.IO" />
+  <xs:complexType name="RemoteFileInfo">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.IO" minOccurs="0" name="FileByteStream" nillable="true" type="q1:Stream" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Length" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemoteFileInfo" nillable="true" type="tns:RemoteFileInfo" />
+  <xs:complexType name="DownloadRequest">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="DownloadRequest" nillable="true" type="tns:DownloadRequest" />
+  <xs:complexType name="Data">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LgName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="str" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="vNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="vPass" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Data" nillable="true" type="tns:Data" />
+</xs:schema>

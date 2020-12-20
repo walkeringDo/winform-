@@ -1,0 +1,5 @@
+F:\BaiduNetdiskDownload\c#自用相关\TestDLL\WcfService1\bin\WcfService1.dll
+F:\BaiduNetdiskDownload\c#自用相关\TestDLL\WcfService1\bin\WcfService1.pdb
+F:\BaiduNetdiskDownload\c#自用相关\TestDLL\WcfService1\obj\Debug\WcfService1.csprojResolveAssemblyReference.cache
+F:\BaiduNetdiskDownload\c#自用相关\TestDLL\WcfService1\obj\Debug\WcfService1.dll
+F:\BaiduNetdiskDownload\c#自用相关\TestDLL\WcfService1\obj\Debug\WcfService1.pdb

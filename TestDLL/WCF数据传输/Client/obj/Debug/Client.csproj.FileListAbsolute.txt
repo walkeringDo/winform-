@@ -1,0 +1,30 @@
+F:\BaiduNetdiskDownload\WCF\CS\Client\obj\Debug\Client.TestForm.resources
+F:\BaiduNetdiskDownload\WCF\CS\Client\obj\Debug\Client.Properties.Resources.resources
+F:\BaiduNetdiskDownload\WCF\CS\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+F:\BaiduNetdiskDownload\WCF\CS\Client\bin\Debug\Client.exe.config
+F:\BaiduNetdiskDownload\WCF\CS\Client\bin\Debug\Client.exe
+F:\BaiduNetdiskDownload\WCF\CS\Client\bin\Debug\Client.pdb
+F:\BaiduNetdiskDownload\WCF\CS\Client\obj\Debug\Client.exe
+F:\BaiduNetdiskDownload\WCF\CS\Client\obj\Debug\Client.pdb
+D:\Documents\Visual Studio 2012\Projects\WCF\CS\Client\bin\Debug\Client.exe.config
+D:\Documents\Visual Studio 2012\Projects\WCF\CS\Client\obj\Debug\Client.exe
+D:\Documents\Visual Studio 2012\Projects\WCF\CS\Client\obj\Debug\Client.pdb
+F:\BaiduNetdiskDownload\c#自用相关\TestDLL\WCF数据传输\Client\bin\Debug\Client.exe.config
+F:\BaiduNetdiskDownload\c#自用相关\TestDLL\WCF数据传输\Client\obj\Debug\Client.exe
+F:\BaiduNetdiskDownload\c#自用相关\TestDLL\WCF数据传输\Client\obj\Debug\Client.pdb
+F:\BaiduNetdiskDownload\c#自用相关\TestDLL\WCF数据传输\Client\bin\Debug\Client.exe
+F:\BaiduNetdiskDownload\c#自用相关\TestDLL\WCF数据传输\Client\bin\Debug\Client.pdb
+F:\BaiduNetdiskDownload\c#自用相关\TestDLL\WCF数据传输\Client\obj\Debug\Client.TestForm.resources
+F:\BaiduNetdiskDownload\c#自用相关\TestDLL\WCF数据传输\Client\obj\Debug\Client.Properties.Resources.resources
+F:\BaiduNetdiskDownload\c#自用相关\TestDLL\WCF数据传输\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+F:\BaiduNetdiskDownload\c#自用相关\TestDLL\WCF数据传输\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+E:\c#自用相关\TestDLL\WCF数据传输\Client\bin\Debug\Client.exe.config
+E:\c#自用相关\TestDLL\WCF数据传输\Client\bin\Debug\Client.exe
+E:\c#自用相关\TestDLL\WCF数据传输\Client\bin\Debug\Client.pdb
+E:\c#自用相关\TestDLL\WCF数据传输\Client\obj\Debug\Client.csprojAssemblyReference.cache
+E:\c#自用相关\TestDLL\WCF数据传输\Client\obj\Debug\Client.TestForm.resources
+E:\c#自用相关\TestDLL\WCF数据传输\Client\obj\Debug\Client.Properties.Resources.resources
+E:\c#自用相关\TestDLL\WCF数据传输\Client\obj\Debug\Client.csproj.GenerateResource.cache
+E:\c#自用相关\TestDLL\WCF数据传输\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+E:\c#自用相关\TestDLL\WCF数据传输\Client\obj\Debug\Client.exe
+E:\c#自用相关\TestDLL\WCF数据传输\Client\obj\Debug\Client.pdb

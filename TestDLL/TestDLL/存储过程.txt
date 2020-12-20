@@ -1,0 +1,183 @@
+﻿create proc pro_abc
+	@a varchar,
+	@outvalue varchar output
+	
+	as
+	BEGIN
+		set nocount ON;
+		select * from abc where a =@a;
+		set @outvalue = (select a from abc where a=2);
+		return 1;
+		END
+ EXEC pro_abc
+
+
+
+
+
+ use Mytest
+go
+--创建数据库
+--if exists(select * from sysdatabases where name='Stu')
+ --drop database Stu
+--go
+create database Stu
+on primary
+(
+ name = Stu,
+ filename='F:\StuDB.mdf'
+)
+log on
+(
+ name = Stu_log,
+ filename='F:\Stu_log.ldf'
+)
+go
+use Stu
+go
+--创建数据表
+if exists(select * from sysobjects where name ='S')
+drop table S
+
+go
+create table S --创建学生表
+(
+ sNo char(4) not null primary key , --学号
+ sName char(10) not null,--姓名
+ sAge int not null,--年龄
+ sSex char(4) not null--性别
+)
+go
+if exists(select * from sysobjects where name ='C')
+ drop table C
+go
+create table C --创建课程表
+(
+cNo int identity(1,1) primary key not null, --课程号
+ cName varchar(20) not null,--课程名
+ cPub varchar(50) --出版社
+)
+go
+
+if exists(select * from sysobjects where name ='SC')
+drop table SC
+go
+create table SC --创建成绩表
+(
+ sNo char(4) not null,--学号
+ cNo int not null,--课程号
+ score int --成绩
+)
+go
+--创建约束
+--use Stu
+--go
+--alter table S
+--add constraint CK_sNO check (sNo like 'S[0-9][0-9][0-9]'),
+
+
+
+--创建约束
+use Stu
+go
+alter table S
+add constraint CK_sNO check (sNo like 'S[0-9][0-9][0-9]'),
+ constraint CK_sAge check(sAge between 0 and 100),
+ constraint CK_sSex check (sSex in ('男','女'))
+alter table SC
+add constraint PK_SC primary key(sNo,cNo),
+ constraint CK_score check(score between 0 and 100),
+ constraint FK_sNo foreign key(sNo) references S(sNo),
+ constraint FK_cNo foreign key(cNo) references C(cNo)
+go
+--插入数据
+use Stu
+go
+insert into S(sNo,sName,sAge,sSex)
+values('S001','张三',18,'男')
+insert into S(sNo,sName,sAge,sSex)
+values('S002','李四',19,'女')
+insert into S(sNo,sName,sAge,sSex)
+values('S003','王五',17,'男')
+
+insert into C(cName,cPub)
+values('JAVA编程','科学出版社')
+insert into C(cName,cPub)
+values('.NET编程','新华出版社')
+insert into C(cName,cPub)
+values('JSP编程','出版社')
+
+insert into SC(sNo,cNo,score)
+values('s001',1,98)
+insert into SC(sNo,cNo,score)
+values('s002',2,90)
+insert into SC(sNo,cNo,score)
+values('s003',3,95)
+insert into SC(sNo,cNo,score)
+values('s001',3,20)
+insert into SC(sNo,cNo,score)
+values('s002',1,40)
+insert into SC(sNo,cNo,score)
+values('s002',3,50)
+insert into SC(sNo,cNo,score)
+values('s003',1,48)
+insert into SC(sNo,cNo,score)
+values('s003',2,45)
+go
+--查看数据
+select * from s
+select * from c
+select * from sc
+--创建存储过程
+
+--查询学生
+use Stu
+go
+if exists(select * from sysobjects where name ='proc_Query_S')
+ drop procedure proc_Query_S
+go
+create procedure proc_Query_S
+@sNo char(4) ,--学号
+@sName char(10) output,--姓名
+@sAge int output,--年龄
+@sSex char(2) output--性别
+as
+ select @sName=sName,@sAge=sAge,@sSex=sSex from s where sNo=@sNo
+go
+--查询课程
+use Stu
+go
+if exists(select * from sysobjects where name ='proc_Query_C')
+ drop procedure proc_Query_C
+go
+create procedure proc_Query_C
+@cNo int,--课程号
+@cName varchar(20)output,--课程名
+@cPub varchar(50) output--出版社
+as
+ select @cName=cName,@cPub=cPub from C where cNo = @cNo
+go
+--查询成绩
+use Stu
+go
+if exists(select * from sysobjects where name ='proc_Query_SC')
+ drop procedure proc_Query_SC
+go
+create procedure proc_Query_SC
+@sNo char(4),--学号
+@cNo int ,--课程号
+@score int output--分数
+as
+ select @score=score from SC where sNo=@sNo and cNo=@cNo
+
+go
+--查询成绩多个
+use Stu
+go
+if exists(select * from sysobjects where name ='proc_Query_SC_More')
+ drop procedure proc_Query_SC_More
+go
+create procedure proc_Query_SC_More
+@sNo char(4)--学号
+as
+ select sNo,cNo=(select cName from c c where c.cNo=sc.cNo),score from SC sc where sNo=@sNo

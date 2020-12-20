@@ -1,0 +1,57 @@
+﻿基于EF Core的.NetCore快速开发框架（EF-Code First ：Repository，UnitOfWork，DbContext）
+UnitOfWork、Repository模式以及DbContext实现类的构造，来给架构案例添加增删改查功能
+
+
+此项目主要分成两部分：Zxw.Framework.NetCore （核心类库）和 NetCore.WebsiteProject（项目）两部分
+
+
+
+Zxw.Framework.NetCore 项目说明：
+
+    Attributes —— 一些缓存（redis）常用的方法属性
+    CodeGenerator —— 代码生成器，用于生成Repository和Service层的代码
+    CodeTemplate —— Repository和Service层代码模板
+    EfDbContext —— EF上下文
+    Extensions —— 一些常用的扩展方法
+    Filters —— 一些常用的拦截器
+    Helpers —— 一些常用的帮助类
+    IoC —— IoC容器封装类，Autofac
+    Models —— 实体接口类，IBaseModel<TKey>
+    Options —— 一些常用的配置类
+    Repositories —— Repository层的父类  （包括BaseRepository与IRepository）
+	UnitOfWork——（包括EFUnitOfWork与IUnitOfWork）UnitOfWork模式（主要作用是在数据持久化过程中，数据提，确保数据的完整性，对象使用确保同一上下文(EfDbContext)对象。如果有异常，提供回滚）
+
+框架使用
+
+如 NetCore.WebsiteProject所示，按照此项目结构创建好：
+
+    Zxw.Framework.Website —— 网站（前端后台展示）
+    Zxw.Framework.Website.Controllers —— 控制器（通过接口 IUnitOfWork(为了减少与数据库通讯的次数) 调用UnitOfWork模式 调用EfDbContext）
+    Zxw.Framework.Website.IRepositories —— 仓储接口继承父类接口IRepository
+    Zxw.Framework.Website.Models —— 数据库字段实体
+    Zxw.Framework.Website.Repositories —— 仓储继承父类BaseRepository（业务实体的仓储实现：实现各个实体的 Repository 仓储操作（可以发现，通用仓储操作在数据组件中封装好后，在实际业务中只需要编写非常少量的代码即可实现各个实体的仓储操作，这就是封装的好处。））
+    Zxw.Framework.Website.ViewModels —— ViewModels 自定义字段
+
+	关于 Repository层的作用 
+	解答参考 ：http://www.360doc.com/content/14/0327/12/5054188_364129552.shtml
+       在数据库系统中，对于数据层来说，所有的操作归根结底无非“C（增加）、R（读取）、U（修改）、D（删除）”这四种操作。四种操作当中，与与业务相关度最大的是读取操作，
+根据各种不同的业务需求提交不同的查询，其最终执行应该放到业务层面中去进行，而增加，修改，删除这三种操作较为通用，可以作为通用数据操作封装到Repository中。
+在Repository中，唯一的变化点就是各种不同的实体类型，既然是变化点就应该进行封装，这里使用泛型来封装这个变化点。
+　
+     对于实体的查询操作，需要着重说明一下。EF是ORM，ORM最大的特点就是看到的使用的都是对象，读取一个对象，就相当于执行了一个“select * from table”的查询操作，
+稍微了解数据库的同学都知道，这是非常消耗性能与内存的，数据查询最好还是应该按需查询，要什么取什么。EF的查询操作如果不处理好，很容易造成巨大的性能问题，
+比如有些同学喜欢在Repository中定义诸如GetByName，GetByXX，GetByXXX的操作，这些操作通常并不是每个实体都需要，即使需要也很有局限性，最后这些操作大都伦为“鸡肋”，
+限制了使用场景，也不能按需查询。还有些同学定义考虑到了按条件查询，定义了比如GetByPredicate(predicate)的操作，但使用了IEnumerable<T>的返回值，相当于把这部分数据都加载到内存中，
+再进行后续操作。甚至还有定义 IEnumerable<T> GetAll(); 操作的，明白的同学都知道这是件多么恐怖的事，相当于把整个表的数据都加载到内存中，再进行后续操作！！！诸如此类，问题多多……其实，
+数据查询，只要在Repository中定义一个只读的IQueryable<T>的数据集，其他的事就完全不用管了，业务层中想要什么就取什么就好了，当然，为了充分利用EF对主键查询的缓存特性，定义一个 GetByKey 的查询操作
+还是可以接受的。总之，EF的数据查询做不好，影响很大，这也是很多码农说EF性能不好的重要原因。
+
+关于UnitOfWork（　实现类中所有操作最终都是通过单元操作来提交的）
+      引入单元操作，主要是为了给各个实体维护一个共同的DbContext上下文对象，保证所有的操作都是在共同的上下文中进行的。EF的操作提交 context.SaveChanged() 默认就是事务性的，
+只要保证了当前的所有实体的操作都是在一个共同的上下文中进行的，就实现了事务操作了。
+　在业务层中，各个实体的增删改操作都是通过各个实体的Repository进行的，只需要提供一个提交保存的功能作为最后调用，即可保证当前的提交是事务性的。因此定义给业务层引用的单元操作接口 IUnitOfWorks
+
+
+　在此需要特别说明的是，为了保持项目结构的整洁与规范，实体数据操作的Repository与UnitOfWork只能被业务层（核心层及其派生层次）调用，而不能被业务层的上层调用
+，比如MVC项目中，不能被控制器调用，防止开发人员不遵守规范，在控制器中进行业务实现导致项目结构的混乱。
+因此给实体的Repository接口属性与业务基类中的UnitOfWork属性的可访问性都要设置为protected ，而不能为 public。

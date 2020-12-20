@@ -1,0 +1,12 @@
+F:\BaiduNetdiskDownload\c#自用相关\TestDLL\WCF简单客户端\bin\Debug\WCF简单客户端.exe.config
+F:\BaiduNetdiskDownload\c#自用相关\TestDLL\WCF简单客户端\bin\Debug\WCF简单客户端.exe
+F:\BaiduNetdiskDownload\c#自用相关\TestDLL\WCF简单客户端\bin\Debug\WCF简单客户端.pdb
+F:\BaiduNetdiskDownload\c#自用相关\TestDLL\WCF简单客户端\obj\Debug\WCF简单客户端.exe
+F:\BaiduNetdiskDownload\c#自用相关\TestDLL\WCF简单客户端\obj\Debug\WCF简单客户端.pdb
+E:\c#自用相关\TestDLL\WCF简单客户端\bin\Debug\WCF简单客户端.exe.config
+E:\c#自用相关\TestDLL\WCF简单客户端\bin\Debug\WCF简单客户端.exe
+E:\c#自用相关\TestDLL\WCF简单客户端\bin\Debug\WCF简单客户端.pdb
+E:\c#自用相关\TestDLL\WCF简单客户端\obj\Debug\WCF简单客户端.csprojAssemblyReference.cache
+E:\c#自用相关\TestDLL\WCF简单客户端\obj\Debug\WCF简单客户端.csproj.CoreCompileInputs.cache
+E:\c#自用相关\TestDLL\WCF简单客户端\obj\Debug\WCF简单客户端.exe
+E:\c#自用相关\TestDLL\WCF简单客户端\obj\Debug\WCF简单客户端.pdb
